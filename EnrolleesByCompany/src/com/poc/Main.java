@@ -1,5 +1,7 @@
 package com.poc;
 
+import java.io.FileNotFoundException;
+
 import com.poc.enrollees.EnrolleeProcessor;
 
 public class Main {
@@ -9,9 +11,14 @@ public class Main {
        String outputDir = args[1];
        if(inputFile != null && outputDir != null) {
     	   EnrolleeProcessor enrolleeProcessor= new EnrolleeProcessor();
-           enrolleeProcessor.seperateEnrollesByCompanyName(inputFile, outputDir);
+           try {
+			enrolleeProcessor.seperateEnrollesByCompanyName(inputFile, outputDir);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
        }
        System.out.println("***********   Main method execution End   ***********");
            
 	}
 }
+
