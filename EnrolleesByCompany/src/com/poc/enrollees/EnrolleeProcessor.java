@@ -11,7 +11,7 @@ public class EnrolleeProcessor {
 
 	public void seperateEnrollesByCompanyName(String inputFile, String outputDir) {
        
-        Map<String, List<Enrollee>> enrolleesByInsurance = new HashMap<>();
+        Map<String, List<Enrollee>> enrolleesByInsurance = new TreeMap<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(inputFile))) {
         	 String header = br.readLine();
