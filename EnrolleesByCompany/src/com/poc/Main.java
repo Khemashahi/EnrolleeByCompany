@@ -1,5 +1,7 @@
 package com.poc;
 
+package com.poc;
+
 import java.io.FileNotFoundException;
 
 import com.poc.enrollees.EnrolleeProcessor;
@@ -21,4 +23,5 @@ public class Main {
            
 	}
 }
+
 
