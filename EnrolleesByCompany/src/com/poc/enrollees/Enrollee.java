@@ -1,5 +1,6 @@
 package com.poc.enrollees;
 
+import java.util.Objects;
 
 public  class Enrollee implements Comparable<Enrollee> {
     private String userId;
@@ -43,4 +44,26 @@ public  class Enrollee implements Comparable<Enrollee> {
     public String toString() {
         return userId + "," + firstAndLastName + ","  + version + "," + insuranceCompany;
     }
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(firstAndLastName, insuranceCompany, userId, version);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Enrollee other = (Enrollee) obj;
+		return Objects.equals(firstAndLastName, other.firstAndLastName)
+				&& Objects.equals(insuranceCompany, other.insuranceCompany) && Objects.equals(userId, other.userId)
+				&& Objects.equals(version, other.version);
+	}
+    
+    
+    
 }
