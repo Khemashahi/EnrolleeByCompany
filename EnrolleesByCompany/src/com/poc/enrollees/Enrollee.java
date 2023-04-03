@@ -22,7 +22,7 @@ public  class Enrollee implements Comparable<Enrollee> {
         return firstAndLastName;
     }
 
-    public int getVersion() {
+    public Integer getVersion() {
         return version;
     }
 
@@ -34,7 +34,7 @@ public  class Enrollee implements Comparable<Enrollee> {
     public int compareTo(Enrollee o) {
         int result = this.getFirstAndLastName().compareTo(o.getFirstAndLastName());
         if (result == 0) {
-            result = this.getFirstAndLastName().compareTo(o.getFirstAndLastName());
+            result = this.getVersion().compareTo(o.getVersion());
         }
         return result ;
     }
