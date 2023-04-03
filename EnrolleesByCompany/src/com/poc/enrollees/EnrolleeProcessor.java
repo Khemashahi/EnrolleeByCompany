@@ -41,12 +41,7 @@ public class EnrolleeProcessor {
 
             Map<String, Enrollee> uniqueEnrollees = new LinkedHashMap<>();
             for (Enrollee enrollee : enrollees) {
-            	if(uniqueEnrollees.containsKey(enrollee.getUserId())) {
-            		Enrollee enr = uniqueEnrollees.get(enrollee.getUserId());
-            		if(enr.getVersion()<enrollee.getVersion()) {
-            			uniqueEnrollees.put(enrollee.getUserId(), enrollee);
-            		}
-            	}else  uniqueEnrollees.put(enrollee.getUserId(), enrollee);
+            	 uniqueEnrollees.put(enrollee.getUserId(), enrollee);
             }
 
             String outputFile = outputDir+File.separatorChar+ insuranceCompany + ".csv";
